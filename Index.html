@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>USA Exclusive Rewards | Cash & Gift Card Offers</title>
+  <meta name="description" content="Claim exclusive cash rewards, gift cards, and premium prizes for USA residents. Limited availability, act now!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #f0f5fb 0%, #e9f0f8 100%);
+      color: #0a2540;
+      line-height: 1.4;
+      padding: 20px 16px 60px;
+    }
+
+    .container {
+      max-width: 580px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.96);
+      border-radius: 44px;
+      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.05);
+      overflow: hidden;
+      backdrop-filter: blur(0px);
+      transition: all 0.2s ease;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #11212e 0%, #1b3b4f 100%);
+      padding: 32px 24px 44px;
+      text-align: center;
+      color: white;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+      position: relative;
+    }
+
+    .badge {
+      background: rgba(255,215,0,0.9);
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #1e2a36;
+      margin-bottom: 18px;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .hero h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .hero .subhead {
+      font-size: 1.05rem;
+      opacity: 0.9;
+      font-weight: 400;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .timer-bar {
+      background: #0e2a38;
+      margin-top: 22px;
+      padding: 12px 16px;
+      border-radius: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      backdrop-filter: blur(4px);
+    }
+
+    .timer-text {
+      font-weight: 600;
+      font-size: 0.85rem;
+      background: #f9b81b;
+      color: #1e2a36;
+      padding: 5px 12px;
+      border-radius: 50px;
+    }
+
+    .limited {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* review carousel */
+    .reviews-section {
+      background: #ffffffdd;
+      margin: 16px 20px 0 20px;
+      border-radius: 28px;
+      padding: 6px 0;
+      backdrop-filter: blur(2px);
+    }
+
+    .review-container {
+      background: #fef9e6;
+      border-radius: 24px;
+      padding: 18px 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid #ffecb3;
+      transition: opacity 0.3s ease;
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #2c3e2f;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #a5671a;
+    }
+
+    .stars {
+      color: #ffb443;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+    }
+
+    .review-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #d4a373;
+      border-radius: 50%;
+      margin: 0 4px;
+    }
+
+    /* offers section */
+    .offers-section {
+      padding: 28px 20px 36px;
+    }
+
+    .section-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #0b2b3b;
+      letter-spacing: -0.2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span {
+      background: #f5b04220;
+      padding: 4px 10px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #c46f0d;
+    }
+
+    .desc {
+      color: #3c5a6f;
+      margin-bottom: 28px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-left: 3px solid #f5b042;
+      padding-left: 12px;
+    }
+
+    /* premium card with logo */
+    .offer-card {
+      background: white;
+      border-radius: 28px;
+      margin-bottom: 16px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .offer-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px -12px rgba(0,0,0,0.12);
+      border-color: #ffe1a0;
+    }
+
+    .offer-info {
+      flex: 2;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* brand logo circle */
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      background: #f8f4ed;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .logo-img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .offer-details {
+      flex: 1;
+    }
+
+    .offer-title {
+      font-weight: 800;
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .brand-name {
+      background: #f2eee9;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 30px;
+      color: #4e6b7e;
+    }
+
+    .reward-value {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.2px;
+      background: linear-gradient(125deg, #1a4b62, #0f3a4c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .offer-detail {
+      font-size: 0.7rem;
+      color: #5b7e97;
+      display: flex;
+      gap: 12px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      background: linear-gradient(100deg, #1f6e43, #0f5938);
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-family: inherit;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .cta-btn:active {
+      transform: scale(0.97);
+    }
+
+    @media (max-width: 550px) {
+      .offer-card {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .offer-info {
+        flex-wrap: nowrap;
+      }
+      .cta-btn {
+        justify-content: center;
+        width: 100%;
+        padding: 12px;
+      }
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+    .footer-note {
+      background: #f8fafd;
+      padding: 22px 24px 28px;
+      text-align: center;
+      border-top: 1px solid #e3edf2;
+      font-size: 0.7rem;
+      color: #6f8da3;
+    }
+
+    .disclaimer {
+      font-size: 0.68rem;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    hr {
+      margin: 12px 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, #cbdde6, transparent);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="hero">
+    <div class="badge">🔥 USA EXCLUSIVE 🔥</div>
+    <h1>Claim Your <br>Instant Reward</h1>
+    <div class="subhead">Limited time offers for verified USA members — CashApp, Amazon, Walmart & more</div>
+    <div class="timer-bar">
+      <span class="timer-text">⏳ Offers expire in: <span id="countdown">23:59:59</span></span>
+      <span class="limited">🇺🇸 Only US residents eligible</span>
+    </div>
+  </div>
+
+  <!-- REAL REVIEWS SECTION - always changing via JS -->
+  <div class="reviews-section">
+    <div id="reviewRotator" class="review-container">
+      <!-- dynamic review injected -->
+    </div>
+  </div>
+
+  <div class="offers-section">
+    <div class="section-title">
+      🎁 Active Rewards <span id="offerCountSpan">12 offers</span>
+    </div>
+    <div class="desc">
+      👑 Tap "Claim Reward" — instant access, no points system. Each link unlocks exclusive USA prize.
+    </div>
+    <div id="offersList" class="offers-grid"></div>
+  </div>
+
+  <div class="footer-note">
+    <div class="disclaimer">
+      ⚡ Participation open to legal US residents aged 18+. This site is an independent promotional marketplace.
+      Rewards may vary by state. Users will be redirected to third-party offer walls. Complete required steps to receive gift card or cash deposit.
+    </div>
+    <hr>
+    <div>© 2025 USA CPA Rewards — All trademarks are property of their respective owners.</div>
+  </div>
+</div>
+
+<script>
+  // ============================================================
+  // OFFERS DATA with unique REAL brand logos (emoji + styling as "real" brand mark)
+  // ============================================================
+  const offersData = [
+    { title: "OkWow - CashApp", reward: "$850", brandKey: "CashApp", shortDesc: "Instant cash transfer eligible", link: "https://www.af9m8trk.com/J6H116EG/5JY122KX/?s1=Divet", logo: "💸", brandDisplay: "CashApp" },
+    { title: "RewardZinga", reward: "$1,000", brandKey: "CashApp Elite", shortDesc: "Top-tier deposit reward", link: "https://www.af9m8trk.com/J6H116EG/9PC123FX/?s1=Divet", logo: "⚡", brandDisplay: "CashApp" },
+    { title: "My American Prizes", reward: "$1,000", brandKey: "Amazon", shortDesc: "eGift code via email", link: "https://www.af9m8trk.com/J6H116EG/TJ2123FW/?s1=Divet", logo: "🎁", brandDisplay: "Amazon" },
+    { title: "OkWow - Walmart", reward: "$1,000", brandKey: "Walmart", shortDesc: "Shopping spree credit", link: "https://www.af9m8trk.com/J6H116EG/T6M12294/?s1=Divet", logo: "🛒", brandDisplay: "Walmart" },
+    { title: "OkWow - Family Dollar", reward: "$500", brandKey: "FamilyDollar", shortDesc: "Grocery & essentials", link: "https://www.af9m8trk.com/J6H116EG/TTR12295/?s1=Divet", logo: "💵", brandDisplay: "Family Dollar" },
+    { title: "OkWow - American Eagle", reward: "$100", brandKey: "AmericanEagle", shortDesc: "Clothing gift card", link: "https://www.af9m8trk.com/J6H116EG/MJP12296/?s1=Divet", logo: "🦅", brandDisplay: "American Eagle" },
+    { title: "OkWow - Netflix", reward: "$100", brandKey: "Netflix", shortDesc: "Streaming credit", link: "https://www.af9m8trk.com/J6H116EG/KDQ122LY/?s1=Divet", logo: "🎬", brandDisplay: "Netflix" },
+    { title: "OkWow - Royal Cruise", reward: "$100", brandKey: "RoyalCruise", shortDesc: "Travel onboard credit", link: "https://www.af9m8trk.com/J6H116EG/R98122L2/?s1=Divet", logo: "🚢", brandDisplay: "Cruise" },
+    { title: "OkWow - Costco", reward: "$100", brandKey: "Costco", shortDesc: "Warehouse savings", link: "https://www.af9m8trk.com/J6H116EG/3A9122KV/?s1=Divet", logo: "🏬", brandDisplay: "Costco" },
+    { title: "OkWow - Aldi", reward: "$100", brandKey: "Aldi", shortDesc: "Fresh grocery credit", link: "https://www.af9m8trk.com/J6H116EG/GDZ122L3/?s1=Divet", logo: "🥬", brandDisplay: "Aldi" },
+    { title: "UpLevelRewards", reward: "$1,000", brandKey: "CashDeposit", shortDesc: "Direct deposit reward", link: "https://www.af9m8trk.com/J6H116EG/4K1123XK/?s2=Divet", logo: "🏦", brandDisplay: "Cash Deposit" },
+    { title: "OkWow - CashApp", reward: "$650", brandKey: "CashApp", shortDesc: "Bonus cash reward", link: "https://www.af9m8trk.com/J6H116EG/3AF122KW/?s2=Divet", logo: "💎", brandDisplay: "CashApp" }
+  ];
+
+  // ---------- REAL ROTATING REVIEWS (always changing) -------------
+  const reviewPool = [
+    { text: "I claimed the $850 CashApp reward within minutes! Super legit and fast payout. Highly recommended for USA users!", author: "Marcus T., Texas", stars: 5, location: "Verified Buyer" },
+    { text: "OkWow Walmart $1,000 changed my holiday shopping. No hidden fees, instant code. I'm shocked how easy it was.", author: "Jessica L., Florida", stars: 5, location: "Verified" },
+    { text: "UpLevelRewards deposited $1,000 into my account after a quick survey. Trustworthy platform, will use again.", author: "David R., California", stars: 5, location: "Cash reward" },
+    { text: "My American Prizes gave me an Amazon $1,000 gift card — ordered a new laptop! Real deal for US residents.", author: "Samantha K., New York", stars: 5, location: "Verified Winner" },
+    { text: "Family Dollar $500 helped with groceries big time. No spam, smooth redirect. 10/10 recommend!", author: "Tyrone J., Georgia", stars: 5, location: "Happy Customer" },
+    { text: "Netflix $100 credit worked instantly! Added to my account. OkWow never disappoints.", author: "Emily C., Ohio", stars: 4.9, location: "Streaming Fan" },
+    { text: "Royal Cruise voucher legit — contacted support and they confirmed! Can't wait to travel. Thanks USA CPA!", author: "Robert M., Nevada", stars: 5, location: "Verified" },
+    { text: "Aldi $100 card scanned perfectly at checkout. This site is a hidden gem for free rewards!", author: "Linda H., Michigan", stars: 5, location: "Saver" }
+  ];
+
+  let reviewInterval;
+  let currentReviewIndex = 0;
+
+  function renderReview(index) {
+    const review = reviewPool[index % reviewPool.length];
+    const starFull = '★';
+    const starHalf = '½';
+    let starString = '';
+    const fullStars = Math.floor(review.stars);
+    for (let i = 0; i < fullStars; i++) starString += starFull;
+    if (review.stars % 1 !== 0) starString += starHalf;
+    while (starString.length < 5) starString += '☆';
+    const reviewHtml = `
+      <div class="review-text">“${review.text}”</div>
+      <div class="review-author">
+        <span class="stars">${starString}</span>
+        <span class="review-dot"></span>
+        <span>${review.author}</span>
+        <span class="review-dot"></span>
+        <span>${review.location}</span>
+      </div>
+    `;
+    const container = document.getElementById('reviewRotator');
+    if (container) {
+      container.innerHTML = reviewHtml;
+      container.style.opacity = '0';
+      setTimeout(() => { container.style.opacity = '1'; }, 20);
+    }
+  }
+
+  function startReviewRotation() {
+    if (reviewPool.length) {
+      renderReview(0);
+      let idx = 1;
+      reviewInterval = setInterval(() => {
+        renderReview(idx);
+        idx = (idx + 1) % reviewPool.length;
+        currentReviewIndex = idx;
+      }, 5000);
+    }
+  }
+
+  // ---------- RENDER OFFERS WITH REAL LOGOS (brand icons + style) -------------
+  function renderOffers() {
+    const container = document.getElementById('offersList');
+    if (!container) return;
+    let html = '';
+    for (let offer of offersData) {
+      // determine color style for logo background based on brand
+      let bgGradient = 'linear-gradient(145deg, #fff6e8, #fff0df)';
+      if (offer.brandKey === 'CashApp') bgGradient = 'linear-gradient(135deg, #00c24420, #00a33b20)';
+      if (offer.brandKey === 'Amazon') bgGradient = 'linear-gradient(135deg, #ff990020, #ffb34720)';
+      if (offer.brandKey === 'Walmart') bgGradient = 'linear-gradient(135deg, #0071ce20, #005bb520)';
+      
+      html += `
+        <div class="offer-card">
+          <div class="offer-info">
+            <div class="brand-logo" style="background: ${bgGradient};">
+              <span class="logo-img" style="font-size: 2rem;">${offer.logo}</span>
+            </div>
+            <div class="offer-details">
+              <div class="offer-title">
+                ${offer.title}
+                <span class="brand-name">${offer.brandDisplay}</span>
+              </div>
+              <div class="offer-detail">
+                <span>🎁 Reward: <span class="reward-value">${offer.reward}</span></span>
+                <span>📍 ${offer.shortDesc}</span>
+              </div>
+            </div>
+          </div>
+          <a href="${offer.link}" class="cta-btn" target="_blank" rel="noopener noreferrer nofollow">
+            Claim Now →
+          </a>
+        </div>
+      `;
+    }
+    container.innerHTML = html;
+    const countSpan = document.getElementById('offerCountSpan');
+    if (countSpan) countSpan.innerText = `${offersData.length} offers`;
+  }
+
+  // Countdown timer
+  function startCountdown() {
+    const now = new Date();
+    let endTime = new Date(now);
+    endTime.setHours(now.getHours() + 23);
+    endTime.setMinutes(59);
+    endTime.setSeconds(59);
+    if (endTime <= now) {
+      endTime = new Date(now.getTime() + 23 * 60 * 60 * 1000 + 59 * 60 * 1000);
+    }
+    const countdownElement = document.getElementById('countdown');
+    if (!countdownElement) return;
+    function updateTimer() {
+      const diffMs = endTime - new Date();
+      if (diffMs <= 0) {
+        countdownElement.innerText = "00:00:00";
+        return;
+      }
+      const totalSeconds = Math.floor(diffMs / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      countdownElement.innerText = `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    }
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  }
+
+  // Tracking clicks
+  function setupTracking() {
+    document.body.addEventListener('click', (e) => {
+      const btn = e.target.closest('.cta-btn');
+      if (btn && btn.href) {
+        console.log('[USA CPA] Claim clicked: ', btn.href);
+      }
+    });
+  }
+
+  // Init everything
+  document.addEventListener('DOMContentLoaded', () => {
+    renderOffers();
+    startCountdown();
+    startReviewRotation();
+    setupTracking();
+  });
+</script>
+
+<!-- ensure that reviews keep changing and brand icons feel unique and high-end -->
+</body>
+</html>
